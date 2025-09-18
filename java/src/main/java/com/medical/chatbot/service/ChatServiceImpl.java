@@ -22,7 +22,7 @@ public class ChatServiceImpl implements ChatService {
      */
     @Autowired
     public ChatServiceImpl(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://localhost:8000").build();
+        this.webClient = webClientBuilder.baseUrl("http://python-ml-service:8000").build();
     }
 
     /**

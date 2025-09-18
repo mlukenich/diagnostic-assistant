@@ -3,14 +3,14 @@ from pydantic import BaseModel
 import os
 
 # Define the request body model for the API
-class ApiChatRequest(BaseModel):
+class ChatRequest(BaseModel):
     message: str
 
 # Create the FastAPI application instance
 app = FastAPI()
 
 @app.post("/predict")
-def predict(request: ApiChatRequest):
+def predict(request: ChatRequest):
     """
     This endpoint receives a user's message and returns a placeholder
     machine learning model response.

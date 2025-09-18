@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./ui:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - java-backend
+  java-backend:
+    build: ./java
+    ports:
+      - "8080:8080"
+  python-ml-service:
+    build: ./python
+    ports:
+      - "8000:8000"
